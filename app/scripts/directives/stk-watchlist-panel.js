@@ -3,7 +3,7 @@
 /**
  * @ngdoc directive
  * @name directiveApp.directive:stkWatchlistPanel
- * @description
+ * @description a watchlist service
  * # stkWatchlistPanel
  */
 angular.module('stockCatApp')
@@ -13,7 +13,7 @@ angular.module('stockCatApp')
       restrict: 'E',
       link: function postLink($scope) {
       	$scope.watchlist = {};
-        
+
       	var addListModal = $modal({
       		scope:$scope,
       		template:'views/templates/addlist-modal.html',
@@ -36,7 +36,7 @@ angular.module('stockCatApp')
 
       	$scope.deleteList = function(list){
       		WatchlistService.remove(list);
-      		// $location.path('/');
+      		$location.path('/');
       	};
        }
       };

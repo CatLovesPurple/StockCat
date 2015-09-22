@@ -20,21 +20,23 @@
 						<div class="form-group">
 							<label for="list-description">Brief Description</label>
 							<input type="text"
-								class="form-control"
-								id="list-description"
-								maxlength="40"
-								placeholder="Describe the watchlist"
-								ng-model="watchlist.description"
-								required>
+									class="form-control"
+									id="list-description"
+									maxlength="40"
+									placeholder="Describe the watchlist"
+									ng-model="watchlist.description"
+									required>
 						</div>
 					</div>
 
 					<div class="modal-footer">
 						<button type="submit" 
-						class="btn btn-success" 
-						ng-click="createList()"
-						ng-disabled="!listForm.$valid">Create</button>
-						<button type="button" class="btn btn-danger" ng-click="$hide()">Cancel</button>
+								class="btn btn-success" 
+								ng-click="createList()"
+								ng-disabled="!listForm.$valid">Create</button>
+
+						<button type="button" class="btn btn-danger" 
+											  ng-click="$hide()">Cancel</button>
 					</div>
 				</form>
 			</div>
