@@ -7,12 +7,18 @@
  * # stkWatchlistPanel
  */
 angular.module('stockCatApp')
-  .directive('stkWatchlistPanel', function ($location, $modal, WatchlistService) {
+  .directive('stkWatchlistPanel', function ($location, $modal, $routeParams, WatchlistService) {
     return {
       templateUrl: 'views/templates/watchlist-panel.html',
       restrict: 'E',
       link: function postLink($scope) {
       	$scope.watchlist = {};
+        
+        $scope.currentListId = $routeParams.listId;
+
+        $scope.gotoList = function(listId){
+          $location.path('watchlist/' + listId);
+        }
 
       	var addListModal = $modal({
       		scope:$scope,
