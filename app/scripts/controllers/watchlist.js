@@ -25,6 +25,7 @@ angular.module('stockCatApp')
     };
 
     $scope.addStock = function () {
+      //console.log($scope.watchlist);
       $scope.watchlist = WatchlistService.query($routeParams.listId);
 
       $scope.watchlist.addStock({
@@ -34,5 +35,6 @@ angular.module('stockCatApp')
       });
       addStockModal.hide();
       $scope.newStock = {};
+      //console.log($scope.watchlist);
     };
   });
