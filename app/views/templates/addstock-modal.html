@@ -10,34 +10,36 @@
         <div class="modal-body">
           <div class="form-group">
             <label for="stock-symbol">Symbol</label>
-            <input type="text" class="form-control"
+            <input type="text"
+                   class="form-control"
                    id="stock-symbol"
-                   placeholder="stock symbol"
+                   placeholder="Stock Symbol"
                    ng-model="newStock.company"
                    ng-options="company as company.label for company in companies"
                    bs-typeahead
                    required>
           </div>
-
-
-          //only accepts numbers for shares owned
           <div class="form-group">
             <label for="stock-shares">Shares Owned</label>
-            <input type="number" class="form-control"
+            <input type="number"
+                   class="form-control"
                    id="stock-shares"
                    placeholder="# Shares Owned"
                    ng-model="newStock.shares"
                    required>
           </div>
         </div>
-
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success" ng-click="addStock()" ng-disabled="!stockForm.$valid">
-            Add
-          </button>
-          <button type="button" class="btn btn-danger" ng-click="$hide()">Cancel</button>
+          <button type="submit"
+                  class="btn btn-success"
+                  ng-click="addStock()"
+                  ng-disabled="!stockForm.$valid">Add</button>
+          <button type="button"
+                  class="btn btn-danger"
+                  ng-click="$hide()">Cancel</button>
         </div>
       </form>
+
     </div>
   </div>
 </div>
