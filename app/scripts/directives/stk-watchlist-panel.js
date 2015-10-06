@@ -11,9 +11,10 @@ angular.module('stockCatApp')
     return {
       templateUrl: 'views/templates/watchlist-panel.html',
       restrict: 'E',
+      scope:{},
       link: function postLink($scope) {
       	$scope.watchlist = {};
-        
+
         $scope.currentListId = $routeParams.listId;
 
         $scope.gotoList = function(listId){

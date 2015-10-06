@@ -11,7 +11,7 @@ angular.module('stockCatApp')
     return {
 
       restrict: 'A',
-      require: '^stkSotckTable',
+      require: '^stkStockTable',
       scope:{
         stock: '=',
         isLast: '='

@@ -9,11 +9,14 @@
  */
 angular.module('stockCatApp')
   .controller('WatchlistCtrl', function ($scope, $routeParams, $modal, WatchlistService, CompanyService) {
+
     // Initializations
     $scope.companies = CompanyService.query();
     $scope.watchlist = WatchlistService.query($routeParams.listId);
     $scope.stocks = $scope.watchlist.stocks;
     $scope.newStock = {};
+    console.log($scope.watchlist);
+
     var addStockModal = $modal({
       scope: $scope,
       template: 'views/templates/addstock-modal.html',
@@ -35,6 +38,6 @@ angular.module('stockCatApp')
       });
       addStockModal.hide();
       $scope.newStock = {};
-      //console.log($scope.watchlist);
+
     };
   });

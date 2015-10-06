@@ -4,7 +4,7 @@
  * @ngdoc service
  * @name stockCatApp.QuoteService
  * @description
- * # QuoteService
+ * # QuoteService is for getting realtime stock quote from Yahoo financail API
  * Service in the stockCatApp.
  */
 angular.module('stockCatApp')
@@ -13,7 +13,7 @@ angular.module('stockCatApp')
       var BASE = 'http://query.yahooapis.com/v1/public/yql';
 
       var update = function (quotes) {
-        console.log(quotes);
+       // console.log(quotes);
         // Ensure that the current quotes match registered stocks
         if (quotes.length === stocks.length) {
           _.each(quotes, function (quote, idx) {
@@ -22,7 +22,7 @@ angular.module('stockCatApp')
             stock.change = quote.Change;
             stock.percentChange = quote.ChangeinPercent;
             stock.marketValue = stock.shares * stock.lastPrice;
-            stock.dayChange = stock.shares * parseFloat(stock.change);
+            stock.dayChange = stock.shares * stock.change;
             stock.save();
           });
         }

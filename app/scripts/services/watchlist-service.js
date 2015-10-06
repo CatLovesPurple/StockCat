@@ -33,7 +33,7 @@ angular.module('stockCatApp')
         saveModel();
       },
       removeStock:function(stock){
-        _.remove(this.stocks, function(){
+        _.remove(this.stocks, function(s){
           return stock.company.symbol === s.company.symbol;
         });
         this.recalculate();
@@ -43,7 +43,7 @@ angular.module('stockCatApp')
         var calcs = _.reduce(this.stocks, function(calcs, stock){
           calcs.shares += stock.shares;
           calcs.marketValue += stock.marketValue;
-          calcs.dayChange += stock.datChange;
+          calcs.dayChange += stock.dayChange;
           return calcs;
         },{ shares: 0, marketValue: 0, dayChange: 0 });
 

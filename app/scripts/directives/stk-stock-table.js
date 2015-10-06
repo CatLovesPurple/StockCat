@@ -20,7 +20,7 @@ angular.module('stockCatApp')
 
         $scope.$watch('showPercent', function(showPercent){
           if(showPercent){
-            _.each(rows, function(){
+            _.each(rows, function(row){
               row.showPercent = showPercent;
             });
           }
