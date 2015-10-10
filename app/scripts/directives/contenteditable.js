@@ -38,12 +38,15 @@ angular.module('stockCatApp')
           ngModelCtrl.$parsers.push(function (value) {
             return parseFloat(value);
           });
-        };
+        }
 
         // Listen for change events to enable binding
         $element.on('blur keyup change', function() {
           $scope.$apply(read);
         });
+
+
+
 
       }
 

@@ -38,7 +38,7 @@ angular.module('stockCatApp')
         $scope.showPercent = false;
         $scope.removeStock = function(stock){
           $scope.watchlist.removeStock(stock);
-        }
+        };
       }
     };
   });
