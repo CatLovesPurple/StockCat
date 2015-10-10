@@ -9,7 +9,6 @@
 angular.module('stockCatApp')
   .directive('stkStockRow', function ($timeout, QuoteService) {
     return {
-
       restrict: 'A',
       require: '^stkStockTable',
       scope:{

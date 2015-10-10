@@ -15,7 +15,7 @@ angular.module('stockCatApp')
     $scope.watchlist = WatchlistService.query($routeParams.listId);
     $scope.stocks = $scope.watchlist.stocks;
     $scope.newStock = {};
-    console.log($scope.watchlist);
+    //console.log($scope.watchlist);
 
     var addStockModal = $modal({
       scope: $scope,

@@ -19,7 +19,7 @@ angular.module('stockCatApp')
 
         $scope.gotoList = function(listId){
           $location.path('watchlist/' + listId);
-        }
+        };
 
       	var addListModal = $modal({
       		scope:$scope,
