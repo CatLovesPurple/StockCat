@@ -9,7 +9,7 @@ var NUMBER_REGEXP = /^\s*(\-|\+)?(\d+|(\d*(\.\d*)))\s*$/;
  * # contenteditable
  */
 angular.module('stockCatApp')
-  .directive('contenteditable', function () {
+  .directive('contenteditable', function ($sce) {
     return {
       restrict: 'A',
       require: 'ngModel',//get a hold of ngController
@@ -29,7 +29,7 @@ angular.module('stockCatApp')
 
         //specify how UI should be updated
         ngModelCtrl.$render = function(){
-          $element.html(ngModelCtrl.$viewValue || '');
+          $element.html($sce.getTrustedHtml(ngModelCtrl.$viewValue) || '');
         };
 
         // Add custom parser based input type (only `number` supported)
