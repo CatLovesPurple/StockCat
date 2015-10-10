@@ -12,8 +12,46 @@
         Portfolio Overview
       </div>
       <div class="panel-body">
+        <div ng-hide="watchlists.length && watchlists[0].stocks.length" class="jumbotron">
+          <h1>Take a look at your stock here!</h1>
+          <p>StockCat, your personal investment tool, is ready to be set loose on the financial markets!!</p>
+        </div>
+
+        <div ng-show="watchlists.length && watchlists[0].stocks.length">
+          <!-- top row-->
+          <div class="row">
+            <div class="col-md-6">
+              <div stk-sign-fade="{{marketValue}}" class="well">
+                <h2>{{marketValue | currency}}</h2>
+                <h5>Total Market Value</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--right column-->
+        <div class="col-md-6">
+          <div class="well" stk-sign-color="{{dayChange}}">
+            <h2>{{dayChange || currency}}</h2>
+            <h5>Total Day Change</h5>
+          </div>
+        </div>
+
+        <!--google-chart directives and chart objects-->
+        <div class="row">
+          <!--left column-->
+          <div class="col-md-6">
+            <div google-chart chart="donutChart" style="{{cssStyle}}"></div>
+          </div>
+
+          <!--right column-->
+          <div class="col-md-6">
+            <div google-chart chart="columnChart" style="{{cssStyle}}"></div>
+          </div>
+        </div>
 
       </div>
+
     </div>
   </div>
 </div>
